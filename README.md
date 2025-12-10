@@ -31,7 +31,7 @@ Développement d'un système de Bio-NER sur le corpus GENIA (Version 3.02), la r
 * **Encodage** : Schéma standard **BIO** (Begin, Inside, Outside)[cite: 52].
 * **Class Splitting** : Division de la classe majoritaire "O" (Outside) en sous-classes basées sur les tags Part-of-Speech (e.g., O-NN, O-VB) pour améliorer la distinction du contexte linguistique[cite: 53, 54].
 
-### [cite_start]2. Feature Engineering [cite: 55]
+### 2. Feature Engineering [cite: 55]
 
 Un vecteur de caractéristiques a été généré pour chaque mot, incluant :
 
