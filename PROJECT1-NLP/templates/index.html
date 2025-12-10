@@ -1,0 +1,53 @@
+<!-- filepath: d:\PROJET NLP\templates\index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>GENIA NER Demo</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="logo-wrap">
+      <!-- Placeholder for logo if exists -->
+      <div style="font-size: 2rem;">🧬</div>
+      <div>
+        <h1>NLP : GENIA NER Explorer</h1>
+        <p class="subtitle">Reconnaissance d'entités biomédicales multi-modèles</p>
+      </div>
+    </div>
+
+    <div class="controls">
+        <div class="control-group">
+            <label for="modelSelect">Choisir le modèle :</label>
+            <select id="modelSelect">
+                <option value="" disabled selected>-- Sélectionner un modèle --</option>
+                {% for model in models %}
+                <option value="{{ model }}">{{ model }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+
+    <label for="inputText">Texte biomédical</label>
+    <textarea id="inputText" rows="6" placeholder="Ex: IL-2 gene expression requires reactive oxygen production by 5-lipoxygenase."></textarea>
+
+    <button id="btnPredict">Analyser le texte</button>
+    
+    <div id="loading" class="hidden">
+        <div class="spinner"></div> Analyse en cours...
+    </div>
+
+    <div id="errorBox" class="hidden"></div>
+
+    <div id="resultContainer" class="hidden">
+        <h3>Résultats</h3>
+        <div id="entitySummary" class="entity-chips"></div>
+        
+        <h4>Détail des tokens (JSON)</h4>
+        <pre id="jsonResult"></pre>
+    </div>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

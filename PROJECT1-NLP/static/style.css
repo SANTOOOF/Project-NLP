@@ -1,0 +1,210 @@
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: linear-gradient(135deg, #e8edff 0%, #f7f9ff 50%, #eef2ff 100%);
+  margin: 0;
+  padding: 0;
+  color: #1f2937;
+}
+.container {
+  max-width: 880px;
+  margin: 48px auto;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+h1 {
+  margin: 0 0 6px 0;
+  color: #1b1f3b;
+  letter-spacing: -0.5px;
+}
+.subtitle {
+  margin: 0 0 18px 0;
+  color: #4b5563;
+}
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  resize: vertical;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+textarea:focus {
+  border-color: #4a7cff;
+  box-shadow: 0 0 0 3px rgba(74, 124, 255, 0.15);
+  outline: none;
+}
+button {
+  margin-top: 14px;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #4a7cff, #365fd9);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  box-shadow: 0 8px 20px rgba(74, 124, 255, 0.25);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(74, 124, 255, 0.28);
+}
+#result {
+  margin-top: 16px;
+  padding: 14px;
+  background: #f5f7ff;
+  border-radius: 10px;
+  min-height: 40px;
+  color: #111827;
+  border: 1px solid #e0e7ff;
+}
+.stat-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 18px 0;
+}
+.stat {
+  flex: 1 1 160px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+.stat-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #6b7280;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+.stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+}
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+.logo {
+  height: 58px;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  background: #fff;
+  padding: 6px;
+}
+.controls {
+    background: #f3f4f6;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #e5e7eb;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    border-color: #4a7cff;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#loading {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #4b5563;
+    font-weight: 500;
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #e5e7eb;
+    border-top: 3px solid #4a7cff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#errorBox {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border-radius: 8px;
+    border: 1px solid #fecaca;
+}
+
+.entity-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.chip {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.chip-type {
+    opacity: 0.7;
+    font-size: 0.85em;
+    text-transform: uppercase;
+}
+
+/* Entity Colors */
+.chip.Protein { background-color: #dbeafe; color: #1e40af; }
+.chip.DNA { background-color: #dcfce7; color: #166534; }
+.chip.RNA { background-color: #fef9c3; color: #854d0e; }
+.chip.Cell_type { background-color: #fae8ff; color: #86198f; }
+.chip.Cell_line { background-color: #fce7f3; color: #9d174d; }
+.chip.Lipid { background-color: #ffedd5; color: #9a3412; }
+.chip.Other { background-color: #f3f4f6; color: #374151; }
+
+#jsonResult {
+    background: #1f2937;
+    color: #e5e7eb;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 12px;
+    max-height: 300px;
+}
